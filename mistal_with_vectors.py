@@ -14,10 +14,10 @@ class DummyEmbeddings(Embeddings):
     Replace this with a real embedding generator if needed.
     """
     def embed_documents(self, texts):
-        return [np.random.rand(512).tolist() for _ in texts]  # Generates random embeddings of size 512
+        return [np.random.rand(512).tolist() for _ in texts]  
 
     def embed_query(self, text):
-        return np.random.rand(512).tolist()  # Generates random embeddings for a query
+        return np.random.rand(512).tolist()  
 
 
 def get_pdf_text(pdf):

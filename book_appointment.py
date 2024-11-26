@@ -112,7 +112,7 @@ def parse_date(user_input):
     Parses natural language date input to a complete date format (YYYY-MM-DD).
     Returns the date string if valid, None otherwise.
     """
-    user_input = correct_typos(user_input)  # Correct common typos
+    user_input = correct_typos(user_input) 
 
     # Debugging output to understand how the input is being processed
     print(f"Processing user input: '{user_input}'")
@@ -121,15 +121,15 @@ def parse_date(user_input):
     parsed_date = dateparser.parse(
         user_input,
         settings={
-            'PREFER_DATES_FROM': 'future',  # Prefer future dates for ambiguous terms
-            'RELATIVE_BASE': datetime.now()  # Use the current time as a reference
+            'PREFER_DATES_FROM': 'future', 
+            'RELATIVE_BASE': datetime.now()  
         }
     )
 
     if parsed_date:
-        print(f"Parsed date: {parsed_date}")  # Debugging output for parsed date
+        print(f"Parsed date: {parsed_date}")  
     else:
-        print("Dateparser could not parse the input.")  # Debugging output for failed parsing
+        print("Dateparser could not parse the input.")  
 
     # Ensure the parsed date is in the future
     if parsed_date and parsed_date >= datetime.now():
@@ -154,8 +154,8 @@ def parse_simple_dates(user_input):
         if day in days_of_week:
             target_day = days_of_week[day]
             days_ahead = (target_day - today.weekday() + 7) % 7
-            days_ahead = days_ahead or 7  # Ensure "next" always moves to the following week
+            days_ahead = days_ahead or 7  
             parsed_date = today + timedelta(days=days_ahead)
-            print(f"Fallback parsed date: {parsed_date}")  # Debugging fallback parser
+            print(f"Fallback parsed date: {parsed_date}")  
             return parsed_date.strftime('%Y-%m-%d')
     return None

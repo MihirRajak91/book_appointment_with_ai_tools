@@ -1,9 +1,7 @@
 import streamlit as st
-from user_info_form import validate_email, validate_phone_number  # From user_info_form.py
-from book_appointment import create_database, save_user, save_appointment, parse_date, fetch_all_users, fetch_all_appointments  # From book_appointment.py
-from mistal_with_vectors import get_pdf_text, get_text_chunks, create_vector_store, query_document  # From mistal_with_vectors.py
-
-# Ensure the database is ready
+from user_info_form import validate_email, validate_phone_number  
+from book_appointment import create_database, save_user, save_appointment, parse_date, fetch_all_users, fetch_all_appointments  
+from mistal_with_vectors import get_pdf_text, get_text_chunks, create_vector_store, query_document  
 create_database()
 
 st.title("Appointment System with Document Chat")
