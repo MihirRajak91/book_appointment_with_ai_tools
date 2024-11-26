@@ -1,0 +1,8 @@
+streamlit
+langchain
+dateparser
+PyPDF2
+numpy
+requests
+sentence-transformers
+faiss-cpu
